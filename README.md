@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # IMMO DATA ROBOT
 
 Plateforme SaaS B2B conçue pour les agences immobilières.
@@ -36,12 +35,21 @@ Aider les agences à identifier, qualifier et suivre les meilleures opportunité
 
 ## Développement
 
-- Backend : `cd backend && uvicorn app.main:app --reload`
-- Frontend : `cd frontend && npm install && npm run dev`
+- Backend :
+
+```bash
+cd backend
+uvicorn app.main:app --reload
+```
+
+- Frontend :
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## Statut
 
 🚧 En développement
-=======
-# immo-data-robot
->>>>>>> 23aaa5f855f07022b9d2d6bd04109938ca38c172
