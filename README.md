@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IMMO DATA ROBOT
 
 Plateforme SaaS B2B conçue pour les agences immobilières.
@@ -41,3 +42,6 @@ Aider les agences à identifier, qualifier et suivre les meilleures opportunité
 ## Statut
 
 🚧 En développement
+=======
+# immo-data-robot
+>>>>>>> 23aaa5f855f07022b9d2d6bd04109938ca38c172
