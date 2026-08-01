@@ -1,0 +1,6 @@
+playwright
+pandas
+sqlalchemy
+python-dotenv
+rich
+openpyxl
