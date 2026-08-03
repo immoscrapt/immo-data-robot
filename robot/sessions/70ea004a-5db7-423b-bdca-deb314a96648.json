@@ -1,0 +1,12 @@
+{
+  "session_id": "70ea004a-5db7-423b-bdca-deb314a96648",
+  "name": "dummy",
+  "status": "completed",
+  "created_at": "",
+  "metadata": {
+    "last_result": {
+      "status": "ok"
+    },
+    "connector": "dummy"
+  }
+}

@@ -19,14 +19,27 @@ Aider les agences à identifier, qualifier et suivre les meilleures opportunité
 
 - `backend/` : API FastAPI, modèle de domaine, services, routes
 - `frontend/` : interface Next.js
+- `robot/` : automation engine modulaire avec browser, core, connectors, sessions, screenshots
 - `docker-compose.yml` : orchestration locale
 - `.env.example` : variables d'environnement de base
+
+## Sprint 1 - Automation Engine
+
+Le sprint 1 met en place un moteur d'automatisation professionnel avec :
+
+- `BrowserManager` pour gérer le cycle de vie du navigateur
+- `SessionManager` pour persister les sessions d'exécution
+- `RetryManager` pour maîtriser les échecs temporaires
+- `Logger` pour journaliser les opérations
+- `ScreenshotManager` pour capturer les artefacts de run
+- une architecture modulaire prête pour les connecteurs Cadastre, DVF, Pappers, LinkedIn et Lusha
 
 ## Installation
 
 1. Copier `.env.example` en `.env`
 2. Compléter les variables d'environnement
-3. Lancer `docker compose up --build`
+3. Exécuter `./bootstrap.sh`
+4. Ou lancer `make install && docker compose up --build`
 
 ## Services
 
@@ -35,11 +48,24 @@ Aider les agences à identifier, qualifier et suivre les meilleures opportunité
 
 ## Développement
 
+- Bootstrap local complet :
+
+```bash
+./bootstrap.sh
+```
+
 - Backend :
 
 ```bash
 cd backend
 uvicorn app.main:app --reload
+```
+
+- Robot :
+
+```bash
+cd robot
+python main.py
 ```
 
 - Frontend :

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import auth, users
+from app.api.routes import auth, users
 
 app = FastAPI(
     title="IMMO DATA ROBOT",

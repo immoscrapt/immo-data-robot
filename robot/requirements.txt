@@ -1,6 +1,8 @@
-playwright
-pandas
-sqlalchemy
-python-dotenv
-rich
-openpyxl
+playwright>=1.49,<1.50
+pandas>=2.2,<2.3
+sqlalchemy>=2.0.36,<2.1
+python-dotenv>=1.0,<1.1
+rich>=13.0,<14
+openpyxl>=3.1,<3.2
+pytest>=8.2,<8.3
+pyautogui>=0.9.54,<0.10

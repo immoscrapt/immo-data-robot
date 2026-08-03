@@ -1,23 +1,24 @@
+import os
 from pathlib import Path
-from pydantic import BaseSettings, Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_FILE = BASE_DIR.parent.parent / ".env"
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=ENV_FILE, extra="ignore")
+
     app_name: str = "IMMO DATA ROBOT"
-    secret_key: str = Field(..., env="SECRET_KEY")
+    secret_key: str = "dev-secret-key"
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
     refresh_token_expire_minutes: int = 60 * 24 * 7
 
-    database_url: str = Field(..., env="DATABASE_URL")
-    postgres_db: str = Field("immo_data_robot", env="POSTGRES_DB")
-    postgres_user: str = Field("immo", env="POSTGRES_USER")
-    postgres_password: str = Field("change_me", env="POSTGRES_PASSWORD")
-
-    class Config:
-        env_file = BASE_DIR.parent.parent / ".env"
+    database_url: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./immo_data_robot.db")
+    postgres_db: str = "immo_data_robot"
+    postgres_user: str = "immo"
+    postgres_password: str = "change_me"
 
 
 settings = Settings()
